@@ -168,7 +168,8 @@ public class MetodosOrdenamiento {
             int i = j - 1;
 
             while (i >= 0 && arreglo[i] > actual) {
-                arreglo[j + 1] = arreglo[j];
+                arreglo[i + 1] = arreglo[i];
+                i--;
             }
             arreglo[i + 1] = actual;
         }
@@ -177,6 +178,7 @@ public class MetodosOrdenamiento {
 
     // Método de inserción con errores
     // Error encontrado:
+    // solucion:
     public int[] insercionTercero(int[] arregloOriginal) {
 
         int[] arreglo = Arrays.copyOf(arregloOriginal, arregloOriginal.length);
