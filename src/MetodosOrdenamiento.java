@@ -177,8 +177,8 @@ public class MetodosOrdenamiento {
     }
 
     // Método de inserción con errores
-    // Error encontrado:
-    // solucion:
+    // Error encontrado: el return y el signo 
+    // solucion: returnar el arreglo y cambiar el signo para q ordene ascendente 
     public int[] insercionTercero(int[] arregloOriginal) {
 
         int[] arreglo = Arrays.copyOf(arregloOriginal, arregloOriginal.length);
@@ -186,13 +186,13 @@ public class MetodosOrdenamiento {
             int key = arreglo[j];
             int i = j-1;
 
-            while (i >= 0 && arreglo[i] < key) {
+            while (i >= 0 && arreglo[i] > key) {
                 arreglo[i + 1] = arreglo[i];
                 i--;
             }
             arreglo[i + 1] = key;
         }
-        return new int[] { 15, 34, 1, 2, 5, 6, 7, 10 };
+        return arreglo;
     }
 
 }
