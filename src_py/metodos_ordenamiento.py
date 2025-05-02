@@ -2,7 +2,7 @@
 class MetodosOrdenamiento:
     def sort_Bubble(self, array):
         arreglo=array.copy()
-        print("metodo")
+        #print("metodo")
         n= len(arreglo)
         for i in range(n):
             for j in range(i+1,n):
@@ -42,3 +42,21 @@ class MetodosOrdenamiento:
                     indice_minimo=j
                     arreglo[i],arreglo[indice_minimo]= arreglo[indice_minimo], arreglo[i]
         return arreglo
+
+
+    def sort_shell(self, array):
+        arreglo= array.copy()
+        n= len(arreglo)
+        gap=n//2
+        
+        while gap>0:
+            for i in range(gap, n):
+                temp= arreglo[i]
+                j=i
+                while j >= gap and arreglo [j - gap ]> temp:
+                    arreglo[j]=arreglo[j- gap]
+                    j-=gap
+                arreglo[j]=temp
+            gap//=2
+        return arreglo
+        
